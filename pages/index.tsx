@@ -1,4 +1,5 @@
 import type { InferGetStaticPropsType } from "next";
+import { useState } from "react";
 import getAllProducts from "../framework/shopify/product/get-all-products";
 
 export async function getStaticProps() {
@@ -9,12 +10,14 @@ export async function getStaticProps() {
 export default function Home({
   products,
 }: InferGetStaticPropsType<typeof getStaticProps>) {
-  console.log(products);
+  console.log(products.edges);
+
+  const [allProducts, setAllProducts] = useState(products.edges);
 
   return (
     <div>
-      {products.map((item) => {
-        return <div>Hello</div>;
+      {allProducts.map((item: { node: { id: string; title: string } }) => {
+        return <div key={item.node.id}>{item.node.title}</div>;
       })}
     </div>
   );

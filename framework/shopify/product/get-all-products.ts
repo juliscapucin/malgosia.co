@@ -1,24 +1,19 @@
-const clientID = `?client_id=${process.env.NEXT_PUBLIC_ACCESS_KEY}`;
-const mainUrl = `https://api.unsplash.com/users/`;
+// const clientID = `?client_id=${process.env.NEXT_PUBLIC_ACCESS_KEY}`;
+// const mainUrl = `https://api.unsplash.com/users/`;
 
-const fetchApi = async () => {
-  const url = `${mainUrl}ikredenets/photos${clientID}`;
-  //   const url = `${mainUrl}${name}/photos${clientID}`;
+import getAllProductsQuery from "./../utils/queries/get-all-products";
+import { ProductConnection } from "../schema";
 
-  const res = await fetch(url, {
-    method: "GET",
-    headers: { "Content-Type": "application/json" },
+import fetchApi from "../utils/fetch-api";
+
+type ReturnType = { products: ProductConnection };
+
+const getAllProducts = async (): Promise<any> => {
+  const { data } = await fetchApi<ReturnType>({
+    query: getAllProductsQuery,
   });
 
-  const data = await res.json();
-
-  return { data };
-};
-
-const getAllProducts = async (): Promise<any[]> => {
-  const products = await fetchApi();
-
-  return products.data;
+  return data.products;
 };
 
 export default getAllProducts;
