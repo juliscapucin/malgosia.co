@@ -13,7 +13,13 @@ const getAllProducts = async (): Promise<any> => {
     query: getAllProductsQuery,
   });
 
-  return data.products;
+  // If it's returning null, make it an empty array
+  const products =
+    data.products.edges.map(({ node: product }) => {
+      return product;
+    }) ?? [];
+
+  return products;
 };
 
 export default getAllProducts;
