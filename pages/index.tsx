@@ -10,14 +10,12 @@ export async function getStaticProps() {
 export default function Home({
   products,
 }: InferGetStaticPropsType<typeof getStaticProps>) {
-  console.log(products.edges);
-
   const [allProducts, setAllProducts] = useState(products);
 
   return (
     <div>
-      {allProducts.map((item: { id: string; title: string }) => {
-        return <div key={item.id}>{item.title}</div>;
+      {allProducts.map((item: { id: string; name: string }) => {
+        return <div key={item.id}>{item.name}</div>;
       })}
     </div>
   );
