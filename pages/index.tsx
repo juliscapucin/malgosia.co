@@ -1,9 +1,12 @@
 import type { InferGetStaticPropsType } from "next";
 import { useState } from "react";
+
+import { getConfig } from "@framework/api/config";
 import getAllProducts from "@framework/product/get-all-products";
 
 export async function getStaticProps() {
-  const products = await getAllProducts();
+  const config = getConfig();
+  const products = await getAllProducts(config);
   return { props: { products }, revalidate: 4 * 60 * 60 };
 }
 

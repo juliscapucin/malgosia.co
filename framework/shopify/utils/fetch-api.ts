@@ -1,16 +1,9 @@
-import { loadDefaultErrorComponents } from "next/dist/server/load-components";
-
-type FetcherParams = { query: string };
-
-type FetcherResult<T> = { data: T };
+import { ApiFetcherOptions, ApiFetcherResults } from "@common/types/api";
 
 const fetchApi = async <T>({
+  url,
   query,
-}: FetcherParams): Promise<FetcherResult<T>> => {
-  const url = "http://localhost:4000/graphql";
-  //   const url = `${mainUrl}ikredenets/photos${clientID}`;
-  //   const url = `${mainUrl}${name}/photos${clientID}`;
-
+}: ApiFetcherOptions): Promise<ApiFetcherResults<T>> => {
   const res = await fetch(url, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
