@@ -4,6 +4,9 @@ import { useState } from "react";
 import { getConfig } from "@framework/api/config";
 import getAllProducts from "@framework/product/get-all-products";
 
+import { Layout } from "@components/common";
+import { ProductCard } from "@components/product";
+
 export async function getStaticProps() {
   const config = getConfig();
   const products = await getAllProducts(config);
@@ -17,9 +20,17 @@ export default function Home({
 
   return (
     <div>
-      {allProducts.map((item: { id: string; name: string }) => {
-        return <div key={item.id}>{item.name}</div>;
+      {allProducts.map((product) => {
+        return (
+          <>
+            <ProductCard key={product.id} product={product} />
+            <h3>Hello</h3>
+          </>
+        );
       })}
     </div>
   );
 }
+
+/// Adds custom Layout
+Home.Layout = Layout;

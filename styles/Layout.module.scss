@@ -1,0 +1,37 @@
+@import "./variables";
+
+/*
+============================================================ 
+TRANSITIONS
+============================================================
+*/
+
+.transition {
+  position: fixed;
+  min-width: 100vw;
+  min-height: 100vh;
+  z-index: 25;
+  pointer-events: none;
+}
+
+.transitionUnit {
+  min-width: 100vw;
+  min-height: 25vh;
+  background-color: $clr-black;
+}
+
+/*
+=============== 
+Main
+===============
+*/
+
+.mainContainer {
+  width: 100vw;
+}
+
+/*
+=============== 
+Gallery
+===============
+*/

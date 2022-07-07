@@ -1,0 +1,208 @@
+/*
+=============== 
+Fonts
+===============
+*/
+
+@import url("https://use.typekit.net/ptx2gkw.css");
+// @import url("https://use.typekit.net/cbg5juo.css");
+
+/*
+=============== 
+Variables
+===============
+*/
+
+/* Fonts */
+$font-primary: ff-tisa-sans-web-pro, sans-serif;
+$font-secondary: ff-tisa-sans-web-pro, sans-serif;
+// $font-primary: font-real-headline-pro, sans-serif;
+// $font-secondary: font-real-text-pro, sans-serif;
+
+/* Colors */
+$clr-white: #fcf9f8;
+$clr-black: #0f0f0f;
+$clr-grey: #4d4d48;
+$clr-tint: #3e0fe7;
+$clr-outline: #e7e5e4;
+
+$transition: all 0.3s ease-in;
+$spacing: 0.1rem;
+$radius: 0.25rem;
+$light-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+$dark-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+$max-width: 1170px;
+$fixed-width: 620px;
+
+/*
+=============== 
+Global Styles
+===============
+*/
+
+*,
+::after,
+::before {
+  // font-family: font-real-headline-pro, sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: $font-primary;
+  font-weight: 100;
+  background-color: $clr-white;
+  line-height: 1.5;
+  font-size: clamp(0.875rem, 2vw, 1rem);
+  letter-spacing: 0.01vw;
+  overscroll-behavior: none;
+}
+ul {
+  list-style-type: none;
+}
+a {
+  font-weight: 700;
+  text-decoration: none;
+  color: $clr-black;
+  transition: $transition;
+  // Style for react-router <NavLink />
+  &.active {
+    color: #999;
+  }
+}
+a:hover {
+  color: $clr-white;
+}
+
+img {
+  display: block;
+}
+button,
+button:focus {
+  font-size: clamp(0.7rem, 1vw, 0.8rem);
+  outline: none;
+  border: none;
+  cursor: pointer;
+  background-color: transparent;
+  // border-radius: 25% 10%;
+  // border-radius: 10px;
+}
+
+button:active {
+  outline: none;
+  border: none;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  line-height: 1.2;
+  margin-bottom: 0.75rem;
+  font-family: $font-primary;
+  font-weight: 100;
+}
+h1 {
+  font-size: clamp(3.8rem, 6.5vw, 13rem);
+  color: $clr-white;
+  line-height: 0.8;
+}
+h2 {
+  font-size: clamp(2.5rem, 4vw, 3rem);
+  color: $clr-tint;
+}
+h3 {
+  font-size: clamp(1.2rem, 3vw, 2rem);
+  color: $clr-tint;
+}
+h4 {
+  font-size: clamp(0.875rem, 2vw, 1rem);
+}
+p {
+  margin-bottom: 1.25rem;
+  font-weight: 200;
+  color: $clr-white;
+}
+
+/*
+=============== 
+Product Card
+===============
+*/
+
+.product-card {
+  width: 20rem;
+  height: 30rem;
+}
+.btn {
+  border: transparent;
+  cursor: pointer;
+  background-color: transparent;
+}
+
+.product-card-img-container {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  transition: 0.8s;
+
+  .product-card-img {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    transition: 0.6s;
+
+    &:hover {
+      transform: scale(1.1);
+      transform-origin: center;
+    }
+
+    // img {
+    //   transform-origin: center;
+    //   width: 100%;
+    //   height: 100%;
+    //   object-fit: cover;
+    //   transition: 1s;
+    // }
+  }
+}
+
+/*
+=============== 
+Footer
+===============
+*/
+
+.footer {
+  width: 100vw;
+  height: 13rem;
+  background-color: $clr-black;
+  color: $clr-white;
+  padding: 2rem;
+
+  ul {
+    list-style-type: none;
+  }
+
+  a {
+    text-decoration: none;
+    color: $clr-white;
+    text-decoration: underline;
+    text-decoration-color: $clr-black;
+    transition: 0.3s;
+    &:hover {
+      text-decoration-color: $clr-white;
+    }
+  }
+
+  @media screen and (min-width: 992px) {
+    padding-left: 30vw;
+    display: flex;
+
+    .socials {
+      margin-left: 15rem;
+    }
+  }
+}
