@@ -2,22 +2,22 @@ import { AppProps } from "next/app";
 // import { FunctionComponent } from "react";
 import { FC } from "react";
 
-import "../styles/globals.scss";
+import { Layout } from "@components/common";
 
-// Fallback if Layout doesn't exist
-// const Noop: FunctionComponent = ({ children }) => <>{children}</>;
+import "../styles/globals.scss";
 
 function MyApp({
   Component,
   pageProps,
 }: AppProps & { Component: { Layout: any } }) {
-  const Layout = Component.Layout;
-  // const Layout = Component.Layout ?? Noop;
+  // defines custom layout according to page loaded
+  // if not provided, use basic Layout
+  const CustomLayout = Component.Layout ?? Layout;
 
   return (
-    <Layout>
+    <CustomLayout>
       <Component {...pageProps} />
-    </Layout>
+    </CustomLayout>
   );
 }
 
