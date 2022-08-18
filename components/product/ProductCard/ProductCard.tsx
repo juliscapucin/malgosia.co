@@ -7,6 +7,8 @@ interface Props {
   product: Product;
 }
 
+// import styles from "@styles/ProductCard";
+
 const placeholderImage = "/product-image-placeholder.svg";
 
 const ProductCard: FC<Props> = ({ product }) => {

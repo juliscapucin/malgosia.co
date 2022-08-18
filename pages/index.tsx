@@ -5,6 +5,7 @@ import { getConfig } from "@framework/api/config";
 import getAllProducts from "@framework/product/get-all-products";
 
 import { Layout } from "@components/common";
+import { Grid } from "@components/ui";
 import { ProductCard } from "@components/product";
 
 export async function getStaticProps() {
@@ -19,16 +20,11 @@ export default function Home({
   const [allProducts, setAllProducts] = useState(products);
 
   return (
-    <div>
+    <Grid>
       {allProducts.map((product) => {
-        return (
-          <>
-            <ProductCard key={product.id} product={product} />
-            <h3>Hello</h3>
-          </>
-        );
+        return <ProductCard key={product.id} product={product} />;
       })}
-    </div>
+    </Grid>
   );
 }
 

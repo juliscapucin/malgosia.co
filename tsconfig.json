@@ -20,6 +20,7 @@
       "@framework": ["framework/shopify"],
       "@framework/*": ["framework/shopify/*"],
       "@components/*": ["components/*"],
+      "@styles/*": ["styles/*"],
       "@assets/*": ["assets/*"]
     },
     "incremental": true
