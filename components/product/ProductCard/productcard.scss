@@ -1,4 +1,5 @@
 .product-card {
+  position: relative;
   width: 100%;
   height: 100%;
 }
@@ -33,6 +34,30 @@
       height: 100%;
       object-fit: cover;
       transition: 1s;
+    }
+  }
+}
+
+.product-card-marquee-title-container {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 10;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+
+  .product-card-marquee-title {
+    background-color: $clr-black;
+    color: $clr-white;
+    padding: 0.5rem 1rem;
+    transform: translateY(500%);
+    transition: $transition;
+  }
+
+  &:hover {
+    .product-card-marquee-title {
+      transform: translateY(0%);
     }
   }
 }
