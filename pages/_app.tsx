@@ -4,7 +4,7 @@ import { FC } from "react";
 
 import { Layout } from "@components/common";
 
-import "../styles/globals.scss";
+import "../styles/index.scss";
 
 function MyApp({
   Component,

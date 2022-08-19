@@ -7,8 +7,6 @@ interface Props {
   product: Product;
 }
 
-// import styles from "@styles/ProductCard";
-
 const placeholderImage = "/product-image-placeholder.svg";
 
 const ProductCard: FC<Props> = ({ product }) => {
@@ -18,13 +16,13 @@ const ProductCard: FC<Props> = ({ product }) => {
     <article className='product-card'>
       <Link href={`/products/${slug}`}>
         <a>
-          <h3>{name}</h3>
+          <h4>{name}</h4>
           <div className='product-card-img-container'>
             <div className='product-card-img'>
               {images && (
                 <Image
                   alt={name ?? "Product image"}
-                  src={placeholderImage}
+                  src={images[0].url ?? placeholderImage}
                   layout='fill'
                   objectFit='cover'
                   objectPosition='center center'
