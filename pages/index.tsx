@@ -5,7 +5,7 @@ import { getConfig } from "@framework/api/config";
 import getAllProducts from "@framework/product/get-all-products";
 
 import { Layout } from "@components/common";
-import { Grid, Hero } from "@components/ui";
+import { Grid, Hero, Marquee } from "@components/ui";
 import { ProductCard } from "@components/product";
 
 export async function getStaticProps() {
@@ -27,6 +27,11 @@ export default function Home({
         })}
       </Grid>
       <Hero headline='Headline' description='Description' />
+      <Marquee>
+        {allProducts.slice(0, 3).map((product) => {
+          return <ProductCard key={product.id} product={product} />;
+        })}
+      </Marquee>
     </>
   );
 }
