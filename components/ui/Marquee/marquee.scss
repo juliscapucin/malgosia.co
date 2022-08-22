@@ -1,20 +1,28 @@
 .marqueeContainerOut {
-  width: 200vw;
-  display: flex;
+  width: minmax(100vw, $max-width);
+  overflow: hidden;
 
-  .marqueeContainer {
-    width: 100vw;
-    padding: 1rem 5rem;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 18rem;
-    height: 30rem;
-    overflow: hidden;
-    animation: marquee 10s linear infinite;
+  .marqueeContainerInner {
+    width: 200vw;
+    display: flex;
 
-    // &.duplicated {
-    //   background-color: red;
-    // }
+    .marqueeContainer {
+      width: 100vw;
+      padding: 1rem 5rem;
+      display: flex;
+      grid-template-columns: repeat(3, 1fr);
+      height: 40vh;
+      overflow: hidden;
+      animation: marquee 10s linear infinite;
+
+      &.black {
+        background-color: $clr-black;
+      }
+
+      // &.duplicated {
+      //   background-color: red;
+      // }
+    }
   }
 }
 

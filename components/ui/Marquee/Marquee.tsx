@@ -2,13 +2,32 @@ import { FC, ReactNode } from "react";
 
 interface Props {
   children: ReactNode;
+  background?: "black" | "white";
 }
 
-const Marquee: FC<Props> = ({ children }) => {
+const Marquee: FC<Props> = ({ children, background = "white" }) => {
   return (
     <div className='marqueeContainerOut'>
-      <div className='marqueeContainer'>{children}</div>
-      <div className='marqueeContainer duplicated'>{children}</div>
+      <div className='marqueeContainerInner'>
+        <div
+          className={
+            background === "white"
+              ? "marqueeContainer"
+              : "marqueeContainer black"
+          }
+        >
+          {children}
+        </div>
+        <div
+          className={
+            background === "white"
+              ? "marqueeContainer"
+              : "marqueeContainer black"
+          }
+        >
+          {children}
+        </div>
+      </div>
     </div>
   );
 };

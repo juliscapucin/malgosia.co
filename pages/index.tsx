@@ -34,6 +34,18 @@ export default function Home({
           );
         })}
       </Marquee>
+      <Grid layout='B'>
+        {allProducts.map((product) => {
+          return <ProductCard key={product.id} product={product} />;
+        })}
+      </Grid>
+      <Marquee background='black'>
+        {allProducts.slice(0, 3).map((product) => {
+          return (
+            <ProductCard key={product.id} product={product} variant={"slim"} />
+          );
+        })}
+      </Marquee>
     </>
   );
 }
