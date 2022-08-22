@@ -5,7 +5,12 @@ interface Props {
 }
 
 const Marquee: FC<Props> = ({ children }) => {
-  return <div className='marqueeContainer'>{children}</div>;
+  return (
+    <div className='marqueeContainerOut'>
+      <div className='marqueeContainer'>{children}</div>
+      <div className='marqueeContainer duplicated'>{children}</div>
+    </div>
+  );
 };
 
 export default Marquee;

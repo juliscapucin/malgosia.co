@@ -1,8 +1,28 @@
-.marqueeContainer {
-  padding: 3rem;
-  display: grid;
-  grid-template-columns: repeat(3, 30rem);
-  gap: 3rem;
-  height: 30rem;
-  overflow: hidden;
+.marqueeContainerOut {
+  width: 200vw;
+  display: flex;
+
+  .marqueeContainer {
+    width: 100vw;
+    padding: 1rem 5rem;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18rem;
+    height: 30rem;
+    overflow: hidden;
+    animation: marquee 10s linear infinite;
+
+    // &.duplicated {
+    //   background-color: red;
+    // }
+  }
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
 }
