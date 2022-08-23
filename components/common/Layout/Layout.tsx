@@ -1,10 +1,12 @@
 import Head from "next/head";
 
-interface LayoutProps {
+import { Footer } from "@components/common";
+
+interface Props {
   children: React.ReactNode;
 }
 
-const Layout: React.FC<LayoutProps> = ({ children }) => {
+const Layout: React.FC<Props> = ({ children }) => {
   return (
     <>
       <Head>
@@ -12,7 +14,10 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
         <link rel='preconnect' href='https://use.typekit.net' />
         <link href='https://use.typekit.net/cbg5juo.css' rel='stylesheet' />
       </Head>
-      <div className='mainContainer'>{children}</div>
+      <div className='mainContainer'>
+        <main>{children}</main>
+        <Footer />
+      </div>
     </>
   );
 };
