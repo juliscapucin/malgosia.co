@@ -1,0 +1,14 @@
+.usernav-links {
+  display: flex;
+  gap: 3rem;
+
+  a {
+    color: $clr-white;
+    font-weight: 400;
+    transition: $transition;
+
+    &:hover {
+      color: $clr-tint;
+    }
+  }
+}

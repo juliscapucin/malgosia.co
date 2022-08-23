@@ -1,3 +1,5 @@
+import { Usernav } from "@components/common";
+
 interface Props {}
 
 const Navbar: React.FC<Props> = () => {
@@ -20,6 +22,7 @@ const Navbar: React.FC<Props> = () => {
           <a href='#'>Link</a>
         </li>
       </ul>
+      <Usernav />
     </nav>
   );
 };
