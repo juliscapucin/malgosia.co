@@ -15,7 +15,7 @@ const Usernav: React.FC<Props> = () => {
         </Link>
       </li>
       <li>
-        <Link href='/'>
+        <Link href='/wishlist'>
           <a>
             <Heart />
           </a>
