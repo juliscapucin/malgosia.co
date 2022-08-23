@@ -1,5 +1,7 @@
 import Link from "next/link";
 
+import { Bag as Cart, Heart } from "@components/icons";
+
 interface Props {}
 
 const Usernav: React.FC<Props> = () => {
@@ -7,22 +9,16 @@ const Usernav: React.FC<Props> = () => {
     <ul className='usernav-links'>
       <li>
         <Link href='/'>
-          <a>Link</a>
+          <a>
+            <Cart />
+          </a>
         </Link>
       </li>
       <li>
         <Link href='/'>
-          <a>Link</a>
-        </Link>
-      </li>
-      <li>
-        <Link href='/'>
-          <a>Link</a>
-        </Link>
-      </li>
-      <li>
-        <Link href='/'>
-          <a>Link</a>
+          <a>
+            <Heart />
+          </a>
         </Link>
       </li>
     </ul>
