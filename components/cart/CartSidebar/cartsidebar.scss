@@ -1,0 +1,27 @@
+.cartsidebar-content {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+
+  .cartsidebar-items {
+    padding-top: 2rem;
+    border-top: 1px $clr-black solid;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+
+    .cartsidebar-item {
+      display: flex;
+      justify-content: space-between;
+
+      &:nth-child(3) {
+        padding-bottom: 2rem;
+      }
+
+      &:last-child {
+        border-top: 1px $clr-black solid;
+        padding-top: 2rem;
+      }
+    }
+  }
+}

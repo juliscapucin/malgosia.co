@@ -1,17 +1,17 @@
 import { FC, ReactNode } from "react";
 
-interface Props {}
+interface Props {
+  children: React.ReactNode;
+}
 
-const Sidebar: FC<Props> = () => {
+const Sidebar: FC<Props> = ({ children }) => {
   const isOpen = true;
 
   return (
     <>
       {isOpen ? (
         <div className='sidebar-container'>
-          <div className='sidebar-bg'>
-            <h3>Sidebar</h3>
-          </div>
+          <div className='sidebar-bg'>{children}</div>
         </div>
       ) : null}
     </>
