@@ -1,0 +1,24 @@
+nav {
+  height: 5rem;
+  width: minmax(100vw, $max-width);
+  background-color: $clr-black;
+  color: $clr-white;
+  padding: 1rem 3rem;
+  display: flex;
+  justify-content: space-between;
+
+  .navbar-links {
+    display: flex;
+    gap: 3rem;
+
+    a {
+      color: $clr-white;
+      font-weight: 400;
+      transition: $transition;
+
+      &:hover {
+        color: $clr-tint;
+      }
+    }
+  }
+}

@@ -4,7 +4,9 @@
 @import "./globals.scss";
 @import "./home.scss";
 
+@import "../components/common/Footer/footer.scss";
 @import "../components/common/Layout/layout.scss";
+@import "../components/common/Navbar/navbar.scss";
 
 @import "../components/ui/Hero/hero.scss";
 @import "../components/ui/Grid/grid.scss";

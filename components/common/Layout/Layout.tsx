@@ -1,6 +1,6 @@
 import Head from "next/head";
 
-import { Footer } from "@components/common";
+import { Footer, Navbar } from "@components/common";
 
 interface Props {
   children: React.ReactNode;
@@ -15,6 +15,7 @@ const Layout: React.FC<Props> = ({ children }) => {
         <link href='https://use.typekit.net/cbg5juo.css' rel='stylesheet' />
       </Head>
       <div className='mainContainer'>
+        <Navbar />
         <main>{children}</main>
         <Footer />
       </div>
