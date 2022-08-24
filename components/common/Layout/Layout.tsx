@@ -1,5 +1,7 @@
 import Head from "next/head";
 
+import { useUIContext } from "@components/ui/context";
+
 import { Footer, Navbar } from "@components/common";
 import { Sidebar } from "@components/ui";
 import { CartSidebar } from "@components/cart";
@@ -9,15 +11,15 @@ interface Props {
 }
 
 const Layout: React.FC<Props> = ({ children }) => {
+  const { isSidebarOpen } = useUIContext();
+
   return (
     <>
       <Head>
         <title>Malgosia.co – Shop</title>
-        <link rel='preconnect' href='https://use.typekit.net' />
-        <link href='https://use.typekit.net/cbg5juo.css' rel='stylesheet' />
       </Head>
       <div className='mainContainer'>
-        <Sidebar>
+        <Sidebar isOpen={isSidebarOpen}>
           <CartSidebar />
         </Sidebar>
         <Navbar />

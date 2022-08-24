@@ -1,5 +1,7 @@
 import { FC, ReactNode } from "react";
 
+import { useUIContext } from "@components/ui/context";
+
 import { Bag, Cross } from "@components/icons";
 
 interface Props {}
@@ -7,12 +9,16 @@ interface Props {}
 const CartSidebar: FC<Props> = () => {
   const isEmpty = true;
 
+  const { setIsSidebarOpen } = useUIContext();
+
   return (
     <div className='cartsidebar-container'>
       {isEmpty ? (
         <>
           <div className='cartsidebar-close-btn'>
-            <Cross />
+            <a>
+              <Cross onClick={() => setIsSidebarOpen(false)} />
+            </a>
           </div>
           <div className='cartsidebar-content'>
             <h4>Your Cart is empty</h4>

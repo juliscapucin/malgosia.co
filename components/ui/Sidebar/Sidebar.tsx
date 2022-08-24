@@ -1,12 +1,11 @@
 import { FC, ReactNode } from "react";
 
 interface Props {
-  children: React.ReactNode;
+  children: ReactNode;
+  isOpen: boolean;
 }
 
-const Sidebar: FC<Props> = ({ children }) => {
-  const isOpen = true;
-
+const Sidebar: FC<Props> = ({ children, isOpen }) => {
   return (
     <>
       {isOpen ? (

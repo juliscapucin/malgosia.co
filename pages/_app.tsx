@@ -1,8 +1,8 @@
 import { AppProps } from "next/app";
-// import { FunctionComponent } from "react";
 import { FC } from "react";
 
 import { Layout } from "@components/common";
+import { UIProvider } from "@components/ui/context";
 
 import "../styles/index.scss";
 
@@ -15,9 +15,11 @@ function MyApp({
   const CustomLayout = Component.Layout ?? Layout;
 
   return (
-    <CustomLayout>
-      <Component {...pageProps} />
-    </CustomLayout>
+    <UIProvider>
+      <CustomLayout>
+        <Component {...pageProps} />
+      </CustomLayout>
+    </UIProvider>
   );
 }
 
