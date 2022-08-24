@@ -17,7 +17,12 @@ const CartSidebar: FC<Props> = () => {
         <>
           <div className='cartsidebar-close-btn'>
             <a>
-              <Cross onClick={() => setIsSidebarOpen(false)} />
+              <Cross
+                onClick={() => {
+                  setIsSidebarOpen(false);
+                  document.body.classList.toggle("disable-scroll");
+                }}
+              />
             </a>
           </div>
           <div className='cartsidebar-content'>

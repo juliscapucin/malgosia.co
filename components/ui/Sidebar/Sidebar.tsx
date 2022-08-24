@@ -1,4 +1,4 @@
-import { FC, ReactNode } from "react";
+import { FC, ReactNode, useEffect } from "react";
 
 interface Props {
   children: ReactNode;
@@ -6,6 +6,12 @@ interface Props {
 }
 
 const Sidebar: FC<Props> = ({ children, isOpen }) => {
+  // useEffect(() => {
+  //   if (isOpen) {
+  //     document.body.classList.toggle("disable-scroll");
+  //   }
+  // }, [isOpen]);
+
   return (
     <>
       {isOpen ? (

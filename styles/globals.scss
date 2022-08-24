@@ -19,6 +19,12 @@ body {
   font-size: 1.6rem;
   letter-spacing: 0.01vw;
   overscroll-behavior: none;
+  overflow-x: hidden;
+  overflow-y: scroll;
+
+  &.disable-scroll {
+    overflow-y: hidden;
+  }
 }
 ul {
   list-style-type: none;

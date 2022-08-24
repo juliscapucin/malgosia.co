@@ -1,4 +1,11 @@
-import { FC, ReactNode, createContext, useContext, useState } from "react";
+import {
+  FC,
+  ReactNode,
+  createContext,
+  useContext,
+  useState,
+  useMemo,
+} from "react";
 
 interface Props {
   children: ReactNode;
@@ -11,10 +18,12 @@ const UIContext = createContext<{ [key: string]: any }>({
 const UIProvider: FC<Props> = ({ children }) => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
-  const uiState = {
-    isSidebarOpen,
-    setIsSidebarOpen,
-  };
+  const uiState = useMemo(() => {
+    return {
+      isSidebarOpen,
+      setIsSidebarOpen,
+    };
+  }, [isSidebarOpen]);
 
   return <UIContext.Provider value={uiState}>{children}</UIContext.Provider>;
 };

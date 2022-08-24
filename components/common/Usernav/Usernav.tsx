@@ -13,7 +13,12 @@ const Usernav: React.FC<Props> = () => {
       <li>
         <Link href='/'>
           <a>
-            <Cart onClick={() => setIsSidebarOpen(true)} />
+            <Cart
+              onClick={() => {
+                setIsSidebarOpen(true);
+                document.body.classList.toggle("disable-scroll");
+              }}
+            />
           </a>
         </Link>
       </li>
