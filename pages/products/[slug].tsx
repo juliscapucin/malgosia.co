@@ -10,10 +10,10 @@ import {
 
 export const getStaticPaths: GetStaticPaths = async () => {
   const config = getConfig();
-  const products = await getAllProductsPaths(config);
+  const { productsPaths } = await getAllProductsPaths(config);
 
   return {
-    paths: products.map((item) => ({ params: { slug: item.slug } })),
+    paths: productsPaths.map((item) => ({ params: { slug: item.slug } })),
     fallback: false,
   };
 };

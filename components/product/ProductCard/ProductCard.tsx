@@ -10,7 +10,8 @@ interface Props {
 
 const placeholderImage = "/product-image-placeholder.svg";
 
-const ProductCard: FC<Props> = ({ product, variant = "simple" }) => {
+// This is not a functional component, so no need to use FC here
+const ProductCard = ({ product, variant = "simple" }: Props) => {
   const { id, name, slug, images } = product;
 
   return (
