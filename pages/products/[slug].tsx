@@ -1,9 +1,9 @@
 import { Layout } from "@components/common";
 import { getConfig } from "@framework/api/config";
-import getAllProductsPaths from "@framework/product/get-all-products-paths";
+import { getAllProductsPaths, getProduct } from "@framework/product";
+
 import {
   GetStaticPaths,
-  GetStaticProps,
   GetStaticPropsContext,
   InferGetServerSidePropsType,
 } from "next";
@@ -13,20 +13,28 @@ export const getStaticPaths: GetStaticPaths = async () => {
   const { productsPaths } = await getAllProductsPaths(config);
 
   return {
-    paths: productsPaths.map((item) => ({ params: { slug: item.slug } })),
+    paths: productsPaths.map((p) => ({ params: { slug: p.slug } })),
     fallback: false,
   };
 };
 export const getStaticProps = async ({
   params,
 }: GetStaticPropsContext<{ slug: string }>) => {
-  return { props: { product: { slug: params?.slug } } };
+  const config = getConfig();
+  const { product } = await getProduct({
+    config,
+    variables: { slug: params!.slug },
+  });
+
+  console.log(product);
+
+  return { props: { product } };
 };
 
 export default function Product({
   product,
 }: InferGetServerSidePropsType<typeof getStaticProps>) {
-  return <div>Product</div>;
+  return <div>Hello there! {product?.name}</div>;
 }
 
 Product.Layout = Layout;
